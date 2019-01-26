@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>About</title>
+    </head>
+
+    <body>
+        <div>
+            <strong>{{ boldmessage }} </strong><br />
+        </div>
+
+        <div>
+            <a href="/rango/">Index</a><br />
+            <img src="{% static "images/jellyfish.jpg" %}" alt="Picture of jellyfish" />
+            <img src="{{ MEDIA_URL }}cat.jpg" />
+        </div>
+    </body>
+
+</html>
