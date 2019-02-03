@@ -4,15 +4,15 @@
     <title>Rango</title>
 </head>
 <body>
+    <h1>{{ category.name }}</h1>
     <div>
     {% if category %}
-        <h1>{{ category.name }}</h1>
         {% if pages %}
-            <ul>
+        <ul>
             {% for page in pages %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
             {% endfor %}
-            </ul>
+         </ul>
         {% else %}
             <strong>No Pages currently in category.</strong>
         {% endif %}
@@ -21,7 +21,10 @@
     {% endif %}
     </div>
     <div>
-         <a href="/rango/">Index</a>
+        {% if category %}
+            <a href="/rango/category/{{category.slug}}/add_page/">Add Page</a> <br />
+        {% endif %}
+        <a href="/rango/">Index</a> <br />
     </div>
 </body>
 </html>
